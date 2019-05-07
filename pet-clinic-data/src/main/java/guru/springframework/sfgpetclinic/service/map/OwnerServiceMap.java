@@ -1,0 +1,37 @@
+package guru.springframework.sfgpetclinic.service.map;
+
+import guru.springframework.sfgpetclinic.model.Owner;
+import guru.springframework.sfgpetclinic.service.CRUDService;
+
+import java.util.Set;
+
+/**
+ * Created by ledio on 5/8/19
+ */
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CRUDService<Owner, Long> {
+
+    @Override
+    public Owner findById(Long id) {
+        return super.findById(id);
+    }
+
+    @Override
+    public Owner save(Owner owner) {
+        return super.save(owner.getId(), owner);
+    }
+
+    @Override
+    public Set<Owner> findAll() {
+        return super.findAll();
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        super.deleteById(id);
+    }
+
+    @Override
+    public void delete(Owner owner) {
+        super.delete(owner);
+    }
+}
