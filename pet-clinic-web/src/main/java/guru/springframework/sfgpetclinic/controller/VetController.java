@@ -11,7 +11,6 @@ public class VetController {
 
     @RequestMapping({"/vets", "/vets/index", "/vets/index.html"})
     public String listVets() {
-
         return "vets/index.html";
     }
 }
