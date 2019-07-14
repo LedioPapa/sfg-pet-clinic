@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'owner')}">
 <head>
     <meta charset="UTF-8">
-    <title>List of Pet Owners</title>
+    <title th:text="#{PetOwners}">List of Pet Owners</title>
 </head>
 <body>
-<h1 th:text="'List of Owners'">Owners List</h1>
+<h1 th:text="#{OwnersList}">Owners List</h1>
 <!--/*--><!--@thymesVar id="owners" type="java.util.Set<guru.springframework.sfgpetclinic.model.Owner>"--><!--*/-->
-<table>
+<table class="table table-striped">
     <thead>
     <tr>
-        <td>ID</td>
-        <td>First Name</td>
-        <td>Last Name</td>
+        <td th:text="#{ID}">ID</td>
+        <td th:text="#{FirstName}">First Name</td>
+        <td th:text="#{LastName}">Last Name</td>
     </tr>
     </thead>
     <tbody>
