@@ -16,13 +16,13 @@ import java.util.Set;
  */
 @Service
 @Profile("springdatajpa")
-public class SDJPAOwnerServiceImpl implements OwnerService {
+public class OwnerServiceSDJPA implements OwnerService {
 
     private final OwnerRepository ownerRepository;
     private final PetRepository petRepository;
     private final PetTypeRepository petTypeRepository;
 
-    public SDJPAOwnerServiceImpl(OwnerRepository ownerRepository, PetRepository petRepository, PetTypeRepository petTypeRepository) {
+    public OwnerServiceSDJPA(OwnerRepository ownerRepository, PetRepository petRepository, PetTypeRepository petTypeRepository) {
         this.ownerRepository = ownerRepository;
         this.petRepository = petRepository;
         this.petTypeRepository = petTypeRepository;
