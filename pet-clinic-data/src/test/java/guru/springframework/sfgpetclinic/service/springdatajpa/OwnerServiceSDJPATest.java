@@ -11,6 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -104,5 +105,18 @@ class OwnerServiceSDJPATest {
         service.deleteById(TEST_ID1);
 
         verify(ownerRepository).deleteById(anyLong());
+    }
+
+    @Test
+    void findAllByLastNameLikeWithEmptyString() {
+        String emptyString = "";
+        Set<Owner> allOwners = new HashSet<>(Arrays.asList(ownerToSave, returnOwner, Owner.builder().build()));
+        when(ownerRepository.findAllByLastNameLike("%%")).thenReturn(allOwners);
+
+        Set<Owner> returnedOwners = service.findAllByLastNameLike(emptyString);
+
+        assertNotNull(returnedOwners);
+        assertEquals(3, returnedOwners.size());
+
     }
 }
